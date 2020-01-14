@@ -26,4 +26,18 @@ class Phrase {
       phraseUl.appendChild(li);
     });
   }
+
+  /**
+   * Checks if passed letter is in phrase
+   * @param (string) letter - Letter to check
+   */
+
+  checkLetter() {}
+
+  /**
+   * Checks if passed letter is in phrase
+   * @param (string) letter - Letter to check
+   */
+
+  showMatchedLetter() {}
 }
