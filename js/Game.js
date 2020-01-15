@@ -58,7 +58,9 @@ class Game {
   won
   */
 
-  checkForWin() {}
+  checkForWin() {
+    if ()
+  }
 
   /**
    * Increases the value of the missed property
@@ -66,12 +68,29 @@ class Game {
    * Checks if player has remaining lives and ends game if player is out
    */
 
-  removeLife() {}
+  removeLife() {
+    const scoreboardOl = document.querySelector("#scoreboard > ol");
+    const scoreboardHearts = scoreboardOl.children;
+
+    this.missed += 1;
+
+    scoreboardOl.removeChild(scoreboardOl.lastElementChild);
+
+    if (scoreboardHearts.length === 0) {
+      this.gameOver(false);
+    }
+  }
 
   /**
    * Displays game over message
    * @param {boolean} gameWon - Whether or not the user won the game
    */
 
-  gameOver(gameWon) {}
+  gameOver(gameWon) {
+    if (gameWon) {
+      console.log("won");
+    } else {
+      console.log("lost");
+    }
+  }
 }
