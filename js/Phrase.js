@@ -32,12 +32,19 @@ class Phrase {
    * @param (string) letter - Letter to check
    */
   checkLetter(letter) {
-    this.phrase.inculdes(letter);
+    return this.phrase.includes(letter);
   }
 
   /**
    * Displays passed letter on screen after a match is found
    * @param (string) letter - Letter to display
    */
-  showMatchedLetter(letter) {}
+  showMatchedLetter(letter) {
+    const letterLi = document.getElementsByClassName(letter);
+
+    for (let i = 0; i < letterLi.length; i++) {
+      letterLi[i].classList.remove("hide");
+      letterLi[i].classList.add("show");
+    }
+  }
 }

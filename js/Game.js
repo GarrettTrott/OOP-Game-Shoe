@@ -59,7 +59,7 @@ class Game {
   */
 
   checkForWin() {
-    if ()
+    // if (){}
   }
 
   /**
