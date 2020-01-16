@@ -69,14 +69,17 @@ class Game {
    */
 
   removeLife() {
-    const scoreboardOl = document.querySelector("#scoreboard > ol");
-    const scoreboardHearts = scoreboardOl.children;
+    const scoreboardHearts = document.querySelectorAll(
+      "#scoreboard > ol > li > img"
+    );
+    const lastFullHeart =
+      scoreboardHearts[scoreboardHearts.length - 1 - this.missed];
+
+    lastFullHeart.src = "images/lostHeart.png";
 
     this.missed += 1;
 
-    scoreboardOl.removeChild(scoreboardOl.lastElementChild);
-
-    if (scoreboardHearts.length === 0) {
+    if (scoreboardHearts.length === this.missed) {
       this.gameOver(false);
     }
   }
