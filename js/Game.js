@@ -59,7 +59,11 @@ class Game {
   */
 
   checkForWin() {
-    // if (){}
+    const correctLetters = document.getElementsByClassName("show");
+    const spaces = document.getElementsByClassName("space");
+    return (
+      this.activePhrase.phrase.length === correctLetters.length + spaces.length
+    );
   }
 
   /**
@@ -90,10 +94,20 @@ class Game {
    */
 
   gameOver(gameWon) {
+    const overlay = document.getElementById("overlay");
+    const gameOverMessage = document.getElementById("game-over-message");
+    const resetButton = document.getElementById("btn__reset");
+
     if (gameWon) {
-      console.log("won");
+      overlay.style.backgroundColor = "#7bce85";
+      gameOverMessage.textContent = "Congratulations You Won!";
+      overlay.style.display = "flex";
     } else {
-      console.log("lost");
+      overlay.style.backgroundColor = "#f37a63";
+      gameOverMessage.textContent = "Sorry You Lost...";
+      overlay.style.display = "flex";
     }
+
+    resetButton.textContent = "Play Again";
   }
 }
