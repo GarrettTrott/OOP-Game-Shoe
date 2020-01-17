@@ -19,3 +19,15 @@ for (let i = 0; i < keyButtons.length; i++) {
     game.handleInteraction(e.target);
   });
 }
+
+/* Keyup event handler */
+
+document.addEventListener("keyup", e => {
+  for (let i = 0; i < keyButtons.length; i++) {
+    if (e.key === keyButtons[i].textContent) {
+      game.handleInteraction(keyButtons[i]);
+    }
+  }
+
+  game.handleInteraction();
+});
