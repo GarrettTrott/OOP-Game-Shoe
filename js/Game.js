@@ -50,7 +50,24 @@ class Game {
     this.activePhrase.addPhraseToDisplay();
   }
 
-  handelInteraction() {}
+  /**
+   * Handles onscreen keyboard button clicks
+   * @param (HTMLButtonElement) button - The clicked button element
+   */
+
+  handleInteraction(button) {
+    button.disabled = true;
+    if (this.activePhrase.checkLetter(button.textContent)) {
+      button.classList.add("chosen");
+      this.activePhrase.showMatchedLetter(button.textContent);
+      if (this.checkForWin()) {
+        this.gameOver(true);
+      }
+    } else {
+      button.classList.add("wrong");
+      this.removeLife();
+    }
+  }
 
   /**
   * Checks for winning move

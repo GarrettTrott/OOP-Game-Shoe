@@ -39,6 +39,7 @@ class Phrase {
    * Displays passed letter on screen after a match is found
    * @param (string) letter - Letter to display
    */
+
   showMatchedLetter(letter) {
     const letterLi = document.getElementsByClassName(letter);
 
