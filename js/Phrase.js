@@ -12,7 +12,7 @@ class Phrase {
    */
 
   addPhraseToDisplay() {
-    const phraseUl = document.getElementById("phrase");
+    const phraseUl = document.getElementById("phrase").firstElementChild;
     const phraseArray = this.phrase.split("");
 
     phraseArray.forEach(letter => {

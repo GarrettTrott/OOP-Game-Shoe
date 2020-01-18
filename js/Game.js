@@ -119,12 +119,35 @@ class Game {
       overlay.style.backgroundColor = "#7bce85";
       gameOverMessage.textContent = "Congratulations You Won!";
       overlay.style.display = "flex";
+      this.resetGame();
     } else {
       overlay.style.backgroundColor = "#f37a63";
       gameOverMessage.textContent = "Sorry You Lost...";
       overlay.style.display = "flex";
+      this.resetGame();
     }
 
     resetButton.textContent = "Play Again";
+  }
+
+  resetGame() {
+    // clear phrase from unordered list //
+    const phraseUl = document.getElementById("phrase");
+    phraseUl.firstElementChild.innerHTML = "";
+
+    // enable all keys and set class to 'key' //
+    const keys = document.getElementsByClassName("key");
+    for (let i = 0; i < keys.length; i++) {
+      keys[i].disabled = false;
+      keys[i].className = "key";
+    }
+
+    // Set all hearts back to liveHeart //
+    const scoreboardHearts = document.querySelectorAll(
+      "#scoreboard > ol > li > img"
+    );
+    for (let i = 0; i < scoreboardHearts.length; i++) {
+      scoreboardHearts[i].src = "images/liveHeart.png";
+    }
   }
 }

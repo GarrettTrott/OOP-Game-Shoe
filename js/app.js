@@ -28,6 +28,4 @@ document.addEventListener("keyup", e => {
       game.handleInteraction(keyButtons[i]);
     }
   }
-
-  game.handleInteraction();
 });
