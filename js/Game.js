@@ -20,7 +20,20 @@ class Game {
       new Phrase("A dime a dozen"),
       new Phrase("Beating around the bush"),
       new Phrase("Once in a blue moon"),
-      new Phrase("Speak of the devil")
+      new Phrase("Speak of the devil"),
+      new Phrase("A Piece of Cake"),
+      new Phrase("A Chip on Your Shoulder"),
+      new Phrase("An Arm and a Leg"),
+      new Phrase("Back to Square One"),
+      new Phrase("Barking Up The Wrong Tree"),
+      new Phrase("Between a Rock and a Hard Place"),
+      new Phrase("Burst Your Bubble"),
+      new Phrase("Cry Over Spilled Milk"),
+      new Phrase("Curiosity Killed The Cat"),
+      new Phrase("Cut To The Chase"),
+      new Phrase("Down For The Count"),
+      new Phrase("Down To The Wire"),
+      new Phrase("Dropping Like Flies")
     ];
     return phrases;
   }
@@ -116,13 +129,16 @@ class Game {
     const resetButton = document.getElementById("btn__reset");
 
     if (gameWon) {
-      overlay.style.backgroundColor = "#7bce85";
+      overlay.style.backgroundColor = "#71a371";
       gameOverMessage.textContent = "Congratulations You Won!";
       overlay.style.display = "flex";
       this.resetGame();
     } else {
       overlay.style.backgroundColor = "#f37a63";
-      gameOverMessage.textContent = "Sorry You Lost...";
+      gameOverMessage.innerHTML = `Sorry You Lost...
+      The correct phrase was <h1 style = "color:#000">${this.activePhrase.phrase}</h1>
+      `;
+
       overlay.style.display = "flex";
       this.resetGame();
     }
@@ -149,5 +165,7 @@ class Game {
     for (let i = 0; i < scoreboardHearts.length; i++) {
       scoreboardHearts[i].src = "images/liveHeart.png";
     }
+
+    // remove revealed answer
   }
 }
