@@ -1,5 +1,4 @@
 /* Main styles */
-@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,700&Roboto:300");
 @import url("https://fonts.googleapis.com/css?family=Alata|Bowlby+One+SC&display=swap");
 
 /* Variables */
@@ -22,7 +21,8 @@
 
 * {
   box-sizing: border-box;
-  font-family: "Bowlby One SC", cursive;
+  font-family: "Bowlby One SC", "Lucida Sans", "Lucida Sans Regular",
+    "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 
 body {
@@ -52,6 +52,9 @@ h1 {
 }
 
 button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin: 6px;
   border: 1px solid transparent;
   padding: 0.5rem 1rem;
@@ -59,7 +62,6 @@ button {
   font-size: var(--font-size-medium);
   background-color: var(--color-keys-light);
   border-radius: 5px;
-  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
   outline: none;
   -webkit-transition: var(--transition);
   -o-transition: var(--transition);
@@ -109,7 +111,7 @@ button:hover:not(.wrong) {
   font-size: var(--font-size-medium);
   height: 65px;
   width: 65px;
-  padding: 5px 1px 0 1px;
+  padding: 7px 1px 0 1px;
   margin-right: 2px;
   color: transparent;
   background: var(--color-neutral-light);
@@ -124,18 +126,18 @@ button:hover:not(.wrong) {
   font-size: 30px;
   height: 60px;
   width: 60px;
-  padding: 5px 1px 0 1px;
+  padding: 7px 1px 0 1px;
   margin-right: 2px;
   border-radius: 5px;
 }
 
 .show {
   color: #fff;
-  background-color: var(--color-win);
+  background-color: #71a371;
   font-size: 30px;
   height: 60px;
   width: 60px;
-  padding: 5px 1px 0 1px;
+  padding: 7px 1px 0 1px;
   margin-right: 2px;
   border-radius: 5px;
   -webkit-animation-duration: 0.5s;
@@ -164,7 +166,6 @@ button:hover:not(.wrong) {
 .btn__reset {
   padding: 16px;
   margin: 50px auto;
-  background: #f7a964;
   border-radius: 5px;
   font-size: 20px;
   cursor: pointer;
@@ -198,7 +199,7 @@ button:hover:not(.wrong) {
 }
 
 .start {
-  background-color: #3a3f58;
+  background-color: #0f111a;
 }
 
 .start a {
@@ -214,7 +215,7 @@ button:hover:not(.wrong) {
 }
 
 .lose {
-  background-color: #f5785f;
+  background-color: #ad3a37;
 }
 
 .lose a {

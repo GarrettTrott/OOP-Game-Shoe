@@ -14,7 +14,6 @@ class Phrase {
   addPhraseToDisplay() {
     const phraseUl = document.getElementById("phrase").firstElementChild;
     const phraseArray = this.phrase.split("");
-
     phraseArray.forEach(letter => {
       const li = document.createElement("LI");
       li.textContent = letter;

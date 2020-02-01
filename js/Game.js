@@ -134,7 +134,7 @@ class Game {
       overlay.style.display = "flex";
       this.resetGame();
     } else {
-      overlay.style.backgroundColor = "#f37a63";
+      overlay.style.backgroundColor = "#ad3a37";
       gameOverMessage.innerHTML = `Sorry You Lost...
       The correct phrase was <h1 style = "color:#000">${this.activePhrase.phrase}</h1>
       `;
