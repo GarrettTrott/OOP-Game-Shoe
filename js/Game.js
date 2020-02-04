@@ -7,6 +7,7 @@ class Game {
     this.missed = 0;
     this.phrases = this.createPhrases();
     this.activePhrase = null;
+    this.pressedKeys = [];
   }
 
   /**
@@ -150,6 +151,9 @@ class Game {
     // clear phrase from unordered list //
     const phraseUl = document.getElementById("phrase");
     phraseUl.firstElementChild.innerHTML = "";
+
+    // reset pressed keys log //
+    this.pressedKeys = [];
 
     // enable all keys and set class to 'key' //
     const keys = document.getElementsByClassName("key");

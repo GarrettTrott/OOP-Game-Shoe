@@ -16,16 +16,24 @@ document.getElementById("btn__reset").addEventListener("click", () => {
 const keyButtons = document.getElementsByClassName("key");
 for (let i = 0; i < keyButtons.length; i++) {
   keyButtons[i].addEventListener("click", e => {
-    game.handleInteraction(e.target);
+    if (!game.pressedKeys.includes(e.target.textContent)) {
+      game.pressedKeys.push(e.target.textContent);
+      console.log(game.pressedKeys);
+      game.handleInteraction(e.target);
+    }
   });
 }
 
 /* Keyup event handler */
 
 document.addEventListener("keyup", e => {
-  for (let i = 0; i < keyButtons.length; i++) {
-    if (e.key === keyButtons[i].textContent) {
-      game.handleInteraction(keyButtons[i]);
+  if (!game.pressedKeys.includes(e.key)) {
+    game.pressedKeys.push(e.key);
+    console.log(game.pressedKeys);
+    for (let i = 0; i < keyButtons.length; i++) {
+      if (e.key === keyButtons[i].textContent) {
+        game.handleInteraction(keyButtons[i]);
+      }
     }
   }
 });
